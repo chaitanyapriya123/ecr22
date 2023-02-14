@@ -24,7 +24,7 @@ pipeline {
                 }
             }
         }
-         stage('Push image ') {
+         stage('Push and pullimage ') {
             steps {
                 script{
                   sh 'docker push 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'
