@@ -2,13 +2,13 @@
 pipeline {
     agent any //agent { label 'slave'} 
     stages {
-        stage('ECR login') {
+       stage('ECR login') {
             steps {
                 script{
                 sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 677538114768.dkr.ecr.us-east-1.amazonaws.com'
             }
         }
-        stage('Creating Image') {
+         stage('Creating Image') {
             steps {
                 script{
                 sh 'echo FROM httpd:2.4 >> Dockerfile'
