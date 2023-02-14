@@ -1,4 +1,3 @@
-
 pipeline {
     agent any //agent { label 'slave'} 
     stages {
@@ -8,6 +7,7 @@ pipeline {
                 sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 677538114768.dkr.ecr.us-east-1.amazonaws.com'
             }
         }
+       }
          stage('Creating Image') {
             steps {
                 script{
@@ -21,6 +21,7 @@ pipeline {
                 sh ''' docker build -t task .
                 docker images
                 docker tag task:latest 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'''
+                }
             }
         }
          stage('Push image ') {
@@ -33,9 +34,8 @@ pipeline {
                  
                 }
             }
-         }
-
         }
-    }
+
     }
 }
+    
