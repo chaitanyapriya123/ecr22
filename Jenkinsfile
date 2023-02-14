@@ -20,8 +20,7 @@ pipeline {
                 script{
                 sh ''' docker build -t task .
                 docker images
-                docker tag task:latest 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'''(uri of repository which we created in ecr)
-                }
+                docker tag task:latest 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'''
             }
         }
          stage('Push image ') {
