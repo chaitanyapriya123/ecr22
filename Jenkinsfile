@@ -1,5 +1,5 @@
 pipeline {
-    agent any //agent { label 'slave'} 
+    agent { label 'slave'} 
     stages {
        stage('ECR login') {
             steps {
