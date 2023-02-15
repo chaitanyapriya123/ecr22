@@ -30,8 +30,8 @@ pipeline {
                   sh 'docker push 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'
                   sh 'docker pull 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'
                   sh 'docker images'
-                 // sh 'docker run -td --name mycontainer${BUILD_NUMBER} 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'
-                  sh 'docker run -td --name mycontainer${BUILD_NUMBER} -p 8080:8080 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'
+                  sh 'docker run -td --name mycontainer${BUILD_NUMBER} 677538114768.dkr.ecr.us-east-1.amazonaws.com/task:latest'
+                  
                   sh 'docker ps -a'
                  
                 }
